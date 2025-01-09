@@ -5,6 +5,7 @@
 @using System.Diagnostics
 
 @inject NavigationManager NavigationManager
+@inject IServersEFCoreRepository ServersEFCoreRepository
 
 <h3>Add server</h3>
 <br/>
@@ -61,10 +62,10 @@
     {
         if (server is not null)
         {
-            ServersRepository.AddServer(server);
+            ServersEFCoreRepository.AddServer(server);
             await Task.Delay(100);
         }
 
-        NavigationManager.NavigateTo("/servers");
+        NavigationManager.NavigateTo($"/servers/back_from/{this.server?.City}");
     }
 }

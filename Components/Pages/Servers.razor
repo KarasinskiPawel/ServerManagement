@@ -1,125 +1,101 @@
 ﻿@page "/servers"
+@page "/servers/back_from/{cityName}"
+
 @using System.Diagnostics
 
 @rendermode InteractiveServer
+@inject IServersEFCoreRepository ServersEFCoreRepository
 
 @inject NavigationManager NavManager;
+@inject TorontoOnlineServersStore TorontoOnlineServersStore;
 
 <h3>Servers</h3>
 <br/>
+<br />
 
-<div class="container-fluid text-center">
-    <div class="row w-50">
-        @foreach (var city in cities)
-        {
-            <div class="col">
-                <div class="card @(selectedCity.Equals(city, StringComparison.OrdinalIgnoreCase) ? "border-primary" : "")">
-                    <img src="@($"/images/{city}.png")" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <button type="button" class="btn btn-sm btn-primary" @onclick="@(() => {SelectCity(city);})"> @city </button>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
-</div>
+<CityListComponent
+@ref="cityListComponent"
+SelectCityCallback="HandleCitySelection"
+selectedCity="@this.selectedCity">
+</CityListComponent>
 
+<br />
+
+<SearchBarComponent
+@ref="searchBarComponent"
+SearchServerCallback="HandleSearchServer"
+style="width: 1000px;"
+data-my-attribute="my data">
+</SearchBarComponent>
+
+<CascadingValue Name="SelectedCity" Value="@selectedCity">
+    <ServerListComponent @rendermode="InteractiveServer"
+    CityName="@this.selectedCity"
+    SearchFilter="@searchFilter">
+    </ServerListComponent>
+</CascadingValue>
 <br/>
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search servers" @bind="serverFilter" @bind:event="oninput">
-    <button class="btn btn-outline-secondary" type="button" id="button-search" @onclick="HandleSearch"> Search </button>
-</div>
-<br/>
 
-@* <p>
-    <ServerComponent @rendermode="InteractiveServer"></ServerComponent>
-</p> *@
-
-<ul>
-    <Virtualize Items="this.servers" Context="server">
-        <li @key="server.ServerId">
-            @server.Name in @server.City is
-            <span style="$color: @(server.IsOnline ? "green" : "red" )">
-                @(server.IsOnline ? "online" : "offline")
-            </span>
-            &nbsp;
-            <a href="/servers/edit/@server.ServerId" class="btn btn-link"> Edit </a>
-            &nbsp;
-            <EditForm Model="server" FormName="@($"form-server-{server.ServerId}")" OnValidSubmit="@(() => { DeleteServer(server.ServerId); })">
-                <button type="submit" class="btn btn-primary"> Delete </button>
-            </EditForm>
-        </li>
-    </Virtualize>
-
-@*     @foreach(var server in servers)
-    {
-        <li @key="server.ServerId">
-            @server.Name in @server.City is
-            <span
-            style="$color: @(server.IsOnline ? "green" : "red" )"> @(server.IsOnline ? "online" : "offline")
-            </span>
-            &nbsp;
-            <a href="/servers/edit/@server.ServerId" class="btn btn-link"> Edit </a>
-            &nbsp;
-            <EditForm Model="server" FormName="@($"form-server-{server.ServerId}")" OnValidSubmit="@(() => { DeleteServer(server.ServerId); })">
-                <button type="submit" class="btn btn-primary"> Delete </button>
-            </EditForm>
-        </li>
-    } *@
-</ul>
 
 <p>
     <a href="/servers/add" class="btn btn-primary"> Add server </a>
 </p>
 
 <p>
-    <button class="btn btn-secondary"
+    @*     <button class="btn btn-secondary"
         @onclick="@(() => {
-            this.servers.Insert(0, new Server { Name = "ServerA", City = "Toronto" });
+            //this.servers.Insert(0, new Server { Name = "ServerA", City = "Toronto" });
         })">
         Add server 2
-    </button>
+    </button> *@
 </p>
 
 @code {
-    private List<Server> servers = ServersRepository.GetServersByCity("Toronto");
-
-    private List<string> cities = CitiesRepository.GetCities();
+    [Parameter]
+    public string? CityName { get; set; }
 
     private string selectedCity = "Toronto";
+    private string searchFilter = "";
 
-    private string _serverFilter = "";
-    private string serverFilter {
-        get {
-            return _serverFilter;
-        }
-        set {
-            _serverFilter = value;
-            this.servers = ServersRepository.SearchServers(_serverFilter);
-        }
+    private CityListComponent? cityListComponent;
+    private SearchBarComponent? searchBarComponent;
+
+    public void HandleCitySelection(string cityName){
+        selectedCity = cityName;
+        this.searchFilter = string.Empty;
+
+        searchBarComponent?.ClearFilter();
     }
 
-    private async Task DeleteServer(int serverId)
+    private void HandleSearchServer(string searchFilter)
     {
-        if(serverId > 0)
-        {
-            ServersRepository.DeleteServer(serverId);
-            await Task.Delay(100);
-        }
+        this.searchFilter = searchFilter;
 
-        NavManager.NavigateTo("/");
+        cityListComponent?.ClearSelection();
     }
 
-    private void SelectCity(string cityName){
-        this.selectedCity = cityName;
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
 
-        this.servers = ServersRepository.GetServersByCity(this.selectedCity);
+        if(firstRender){
+            if (NavManager.Uri.Contains("back_from") && !string.IsNullOrWhiteSpace(CityName))
+            {
+                selectedCity = CityName;
+                StateHasChanged();
+            }
+
+            var serversToronto = ServersEFCoreRepository.GetServerByCity("Toronto");
+
+            if(serversToronto is not null)
+            {
+                TorontoOnlineServersStore.SetNumbersServersOnline(serversToronto.Count(a => a.IsOnline));
+            }
+        }
     }
 
     private void HandleSearch(){
-        Debug.WriteLine("HandleSearch => ");
-
-        this.servers = ServersRepository.SearchServers(serverFilter);
-        this.selectedCity = string.Empty;
+        //this.servers = ServersRepository.SearchServers(serverFilter);
+        //this.selectedCity = string.Empty;
     }
 }

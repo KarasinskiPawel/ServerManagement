@@ -1,0 +1,56 @@
+﻿@inject TorontoOnlineServersStore TorontoOnlineServersStore
+
+@implements IDisposable
+
+<div class="col">
+    <div class="card @(selectedCity.Equals(city, StringComparison.OrdinalIgnoreCase) ? "border-primary" : "")">
+        <img src="@($"/images/{city}.png")" class="card-img-top" alt="...">
+        <div class="card-body">
+            <button type="button" class="btn btn-sm btn-primary" @onclick="@(() => {SelectCity(city);})"> @city </button>
+        </div>
+
+        @if(city.Equals("Toronto", StringComparison.OrdinalIgnoreCase))
+        {
+            <text> @numberServersOnlineToronto </text>
+        }
+    </div>
+</div>
+
+@code {
+    private int numberServersOnlineToronto;
+
+    [Parameter]
+    public string selectedCity { get; set; } = "Toronto";
+
+    [Parameter]
+    public string city { get; set; } = "";
+
+    [Parameter]
+    public EventCallback<string> SelectCityCallback { get; set; }
+
+    private void SelectCity(string cityName)
+    {
+        SelectCityCallback.InvokeAsync(cityName);
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            numberServersOnlineToronto = TorontoOnlineServersStore.GetNumberServerOnline();
+            TorontoOnlineServersStore.AddStateChangeListeners(OnServersStatusChange);
+            StateHasChanged();
+        }
+    }
+
+    private void OnServersStatusChange()
+    {
+        numberServersOnlineToronto = TorontoOnlineServersStore.GetNumberServerOnline();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        TorontoOnlineServersStore.RemoveStateChangeListeners(OnServersStatusChange);
+    }
+}

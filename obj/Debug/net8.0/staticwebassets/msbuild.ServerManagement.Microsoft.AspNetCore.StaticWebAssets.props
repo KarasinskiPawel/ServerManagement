@@ -162,23 +162,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\toronto.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ServerManagement.1duy7acrr9.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ServerManagement.nzh9baowgb.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>ServerManagement</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/ServerManagement</BasePath>
-      <RelativePath>ServerManagement.1duy7acrr9.bundle.scp.css</RelativePath>
+      <RelativePath>ServerManagement.nzh9baowgb.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>1duy7acrr9</Fingerprint>
-      <Integrity>NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU=</Integrity>
+      <Fingerprint>nzh9baowgb</Fingerprint>
+      <Integrity>U5b4Pw16NkhDwWx/qoM5v8QPWkKOCCIp7hs1wIEEm2k=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ServerManagement.1duy7acrr9.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ServerManagement.nzh9baowgb.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

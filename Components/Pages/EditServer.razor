@@ -1,6 +1,14 @@
 ﻿@page "/servers/edit/{id:int}"
 
 @inject NavigationManager NavigationManager
+@inject IServersEFCoreRepository ServersEFCoreRepository
+
+@inject IJSRuntime IJSRuntime
+
+<NavigationLock
+    OnBeforeInternalNavigation="OnBeforeInternalNavigation"
+    ConfirmExternalNavigation="true" >
+</NavigationLock>
 
 <h3>EditServer</h3>
 <br/>
@@ -10,46 +18,42 @@
 {
     <EditForm Model="server" FormName="formServer" OnValidSubmit="Submit">
         <DataAnnotationsValidator></DataAnnotationsValidator>
-        <ValidationSummary></ValidationSummary>
+        @*         <ValidationSummary></ValidationSummary> *@
+
         <InputNumber @bind-Value="server.ServerId" hidden></InputNumber>
 
-        <div class="row mb-3">
-            <div class="col-2">
-                <label class="col-form-label"> Name </label>
-            </div>
-            <div class="col-6">
+        <FieldComponent Label="Name">
+            <Control>
                 <InputText @bind-Value="server.Name" class="form-control"></InputText>
-            </div>
-            <div class="col">
+            </Control>
+            <ValidationControl>
                 <ValidationMessage For="() => server.Name"></ValidationMessage>
-            </div>
-        </div>
+            </ValidationControl>
+        </FieldComponent>
 
-        <div class="row mb-3">
-            <div class="col-2">
-                <label class="col-form-label"> City </label>
-            </div>
-            <div class="col-6">
+        <FieldComponent Label="City">
+            <Control>
                 <InputText @bind-Value="server.City" class="form-control"></InputText>
-            </div>
-            <div class="col">
+            </Control>
+            <ValidationControl>
                 <ValidationMessage For="() => server.City"></ValidationMessage>
-            </div>
-        </div>
+            </ValidationControl>
+        </FieldComponent>
 
-        <div class="row mb-3">
-            <div class="col-2">
-                <label class="col-form-label"> IsOnline ? </label>
-            </div>
-            <div class="col-6">
-                <InputCheckbox @bind-Value="server.IsOnline"></InputCheckbox>
-            </div>
-        </div>
+        <FieldComponent Label="IsOnline">
+            <Control>
+                <InputCheckbox @bind-Value="server.IsOnline" class="form-check"></InputCheckbox>
+            </Control>
+            <ValidationControl>
+                <ValidationMessage For="() => server.IsOnline"></ValidationMessage>
+            </ValidationControl>
+        </FieldComponent>
+
         <button class="btn btn-primary" type="submit"> Update </button>
         &nbsp;
         <a href="/servers" class="btn btn-primary"> Close </a>
 
-        <ValidationSummary></ValidationSummary>
+        @*         <ValidationSummary></ValidationSummary> *@
     </EditForm>
 }
 
@@ -64,17 +68,25 @@
     {
         base.OnParametersSet();
 
-        server ??= ServersRepository.GetServerById(this.Id);
+        server ??= ServersEFCoreRepository.GetServerById(this.Id);
     }
 
     private async Task Submit()
     {
         if(server is not null)
         {
-            ServersRepository.UpdateServer(server.ServerId, server);
+            ServersEFCoreRepository.UpdateServer(server.ServerId, server);
             await Task.Delay(100);
         }
 
-        NavigationManager.NavigateTo("/servers");
+        NavigationManager.NavigateTo($"/servers/back_from/{this.server?.City}");
+    }
+
+    private async Task OnBeforeInternalNavigation(LocationChangingContext context){
+        var isConfirmed = await IJSRuntime.InvokeAsync<bool>("confirm", "Czy chcesz opuścić stronę?");
+
+        if(!isConfirmed){
+            context.PreventNavigation();
+        }
     }
 }

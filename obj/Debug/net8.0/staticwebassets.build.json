@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S31iSEa0am9OZN/YSYoi1/s5cXBMlZTlqo2mDc7t5ww=",
+  "Hash": "+Zp5Jhl1gFmNd5Wo4bto03u6nD/NVxXQSzVP/GnG2oM=",
   "Source": "ServerManagement",
   "BasePath": "_content/ServerManagement",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "1duy7acrr9",
-      "Integrity": "NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU=",
+      "Fingerprint": "x4unw60g7l",
+      "Integrity": "UfDTj0wffn46IENNvs3mP2EldSOOu5ax47pLMgJpark=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ServerManagement.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "1duy7acrr9",
-      "Integrity": "NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU=",
+      "Fingerprint": "nzh9baowgb",
+      "Integrity": "U5b4Pw16NkhDwWx/qoM5v8QPWkKOCCIp7hs1wIEEm2k=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ServerManagement.bundle.scp.css"
@@ -246,9 +246,125 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\toronto.png"
+    },
+    {
+      "Identity": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "25o87uqmvr",
+      "Integrity": "Nuu0BHvGBlwN6c5FSVjV9yxX0YPfwg3ufdOucRJCOz0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\QuickGrid.razor.js",
+      "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
+      "RelativePath": "QuickGrid.razor.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eu7w3d5g1a",
+      "Integrity": "tnamWuQ2F5I2J8hbtBt4/9i8Mb2y2o+9Tepj5tUrSdU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\QuickGrid.razor.js"
     }
   ],
   "Endpoints": [
+    {
+      "Route": "_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "AssetFile": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8251"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Nuu0BHvGBlwN6c5FSVjV9yxX0YPfwg3ufdOucRJCOz0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Oct 2024 23:57:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Nuu0BHvGBlwN6c5FSVjV9yxX0YPfwg3ufdOucRJCOz0="
+        }
+      ]
+    },
+    {
+      "Route": "_content/Microsoft.AspNetCore.Components.QuickGrid/QuickGrid.razor.js",
+      "AssetFile": "C:\\Users\\pawelka\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.11\\staticwebassets\\QuickGrid.razor.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tnamWuQ2F5I2J8hbtBt4/9i8Mb2y2o+9Tepj5tUrSdU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Oct 2024 23:38:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tnamWuQ2F5I2J8hbtBt4/9i8Mb2y2o+9Tepj5tUrSdU="
+        }
+      ]
+    },
     {
       "Route": "app.css",
       "AssetFile": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\wwwroot\\app.css",
@@ -988,96 +1104,6 @@
       ]
     },
     {
-      "Route": "ServerManagement.1duy7acrr9.bundle.scp.css",
-      "AssetFile": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ServerManagement.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5915"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 08:37:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "1duy7acrr9"
-        },
-        {
-          "Name": "label",
-          "Value": "ServerManagement.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU="
-        }
-      ]
-    },
-    {
-      "Route": "ServerManagement.1duy7acrr9.styles.css",
-      "AssetFile": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ServerManagement.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "5915"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 08:37:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "1duy7acrr9"
-        },
-        {
-          "Name": "label",
-          "Value": "ServerManagement.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU="
-        }
-      ]
-    },
-    {
       "Route": "ServerManagement.bundle.scp.css",
       "AssetFile": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ServerManagement.bundle.scp.css",
       "Selectors": [],
@@ -1088,7 +1114,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5915"
+          "Value": "6029"
         },
         {
           "Name": "Content-Type",
@@ -1096,11 +1122,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU=\""
+          "Value": "\"U5b4Pw16NkhDwWx/qoM5v8QPWkKOCCIp7hs1wIEEm2k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 08:37:03 GMT"
+          "Value": "Thu, 09 Jan 2025 14:38:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1110,7 +1136,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU="
+          "Value": "sha256-U5b4Pw16NkhDwWx/qoM5v8QPWkKOCCIp7hs1wIEEm2k="
+        }
+      ]
+    },
+    {
+      "Route": "ServerManagement.nzh9baowgb.bundle.scp.css",
+      "AssetFile": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ServerManagement.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6029"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U5b4Pw16NkhDwWx/qoM5v8QPWkKOCCIp7hs1wIEEm2k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 09 Jan 2025 14:38:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nzh9baowgb"
+        },
+        {
+          "Name": "label",
+          "Value": "ServerManagement.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-U5b4Pw16NkhDwWx/qoM5v8QPWkKOCCIp7hs1wIEEm2k="
         }
       ]
     },
@@ -1124,8 +1195,12 @@
           "Value": "bytes"
         },
         {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
           "Name": "Content-Length",
-          "Value": "5915"
+          "Value": "6151"
         },
         {
           "Name": "Content-Type",
@@ -1133,21 +1208,70 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU=\""
+          "Value": "\"UfDTj0wffn46IENNvs3mP2EldSOOu5ax47pLMgJpark=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 08:37:03 GMT"
+          "Value": "Thu, 09 Jan 2025 14:38:26 GMT"
         },
         {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Name": "Link",
+          "Value": "<_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css>; rel=\"preload\"; as=\"style\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NR1L5fCOYzR4TEAOK9x0JBFdZPxdXbyTMRMam+KR3sU="
+          "Value": "sha256-UfDTj0wffn46IENNvs3mP2EldSOOu5ax47pLMgJpark="
+        }
+      ]
+    },
+    {
+      "Route": "ServerManagement.x4unw60g7l.styles.css",
+      "AssetFile": "C:\\Libraries\\Blazor\\BlazorDeepDive\\ServerManagement\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ServerManagement.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6151"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UfDTj0wffn46IENNvs3mP2EldSOOu5ax47pLMgJpark=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 09 Jan 2025 14:38:26 GMT"
+        },
+        {
+          "Name": "Link",
+          "Value": "<_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css>; rel=\"preload\"; as=\"style\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x4unw60g7l"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UfDTj0wffn46IENNvs3mP2EldSOOu5ax47pLMgJpark="
+        },
+        {
+          "Name": "label",
+          "Value": "ServerManagement.styles.css"
         }
       ]
     }

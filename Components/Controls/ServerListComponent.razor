@@ -1,0 +1,71 @@
+﻿@inject IServersEFCoreRepository ServersEFCoreRepository
+
+@* @if(this.servers != null && this.servers.Count > 0){
+    <ul class="list-unstyled">
+        <Virtualize Items="this.servers" Context="server">
+            <ServerComponent Server="server"></ServerComponent>
+        </Virtualize>
+    </ul>
+} *@
+
+<table class="table table-striped">
+    <RepeaterComponent Items="servers">
+        <Header>
+            <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> City </th>
+                    <th> Status </th>
+                    <th> People Online </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        </Header>
+        <Row Context="server">
+            <ServerComponent Server="server"></ServerComponent>
+        </Row>
+    </RepeaterComponent>
+</table>
+
+<br/>
+<button type="button" class="btn btn-primary" @onclick="(() => {})"> Refresh </button>
+<br />
+
+@code {
+    [Parameter]
+    public string? CityName { get; set; }
+
+    [Parameter]
+    public string? SearchFilter { get; set; }
+
+    private List<Server>? servers;
+
+    private System.Threading.Timer? Timer;
+
+    protected override void OnParametersSet()
+    {
+
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        if (string.IsNullOrWhiteSpace(this.SearchFilter))
+        {
+            servers = ServersEFCoreRepository.GetServerByCity(CityName ?? "Toronto");
+        }
+        else
+        {
+            servers = ServersEFCoreRepository.SearchServers(this.SearchFilter);
+        }
+
+        StateHasChanged();
+
+        // Timer = new System.Threading.Timer(_ =>
+        // {
+        //     base.InvokeAsync(StateHasChanged);
+        // }, null, 2000, 2000);
+    }
+}
